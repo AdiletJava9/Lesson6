@@ -2,14 +2,20 @@
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            System.out.println("i = " + i);
-        }
+        Boss boss = new Boss(200, 50, new Weapon());
+        boss.weapon.setWeaponType(WeaponType.BLADED_WEAPONS);
+        boss.weapon.setNameWeapon("Daggers");
+        boss.printInfo();
+        System.out.println("-------------------------------");
+        Skeleton skeleton = new Skeleton(200, 10, new Weapon(), 6);
+        skeleton.weapon.setWeaponType(WeaponType.BLADED_WEAPONS);
+        skeleton.weapon.setNameWeapon("Hammer");
+        skeleton.printInfo();
+        System.out.println("-------------------------------");
+        Skeleton skeleton1 = new Skeleton(300, 15, new Weapon(), 7);
+        skeleton1.weapon.setWeaponType(WeaponType.THROWING_WEAPONS);
+        skeleton1.weapon.setNameWeapon("Kingal");
+        skeleton1.printInfo();
     }
 }
